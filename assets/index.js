@@ -7,6 +7,12 @@ const buttonMuted = document.querySelector('#muteButton')
 const addVolumen = document.querySelector('#addVolumen')
 const removeVolumen = document.querySelector('#removeVolumen')
 
+const miNombre = {
+    nombre:'Carlos Manuel',
+    apellidos: 'Perez Carrizal'
+};
+console.log(`Buen dia ${miNombre.nombre} ${miNombre.apellidos}`);
+
 const player = new mediaPlayer({ el: video, plugins: [new autoplay] });
 console.log(player)
 buttonPlay.onclick = () => {
