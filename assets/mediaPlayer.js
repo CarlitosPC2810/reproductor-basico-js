@@ -9,13 +9,16 @@ mediaPlayer.prototype._initPlugins = function () {
     const player = {
         play: () => this.play(),
         pause: () => this.pause(),
-        getMuted(){
+        media: this.media,
+        get muted() {
             return this.media.muted;
         },
-        
+        set muted(value) {
+            this.media.muted = value;
+        }
     }
-    this.plugins.forEach((plugin) => {
-        plugin.run(this);
+    this.plugins.forEach(plugin => {
+        plugin.run(player);
     });
 };
 
@@ -40,17 +43,17 @@ mediaPlayer.prototype.sound = function () {
 };
 
 mediaPlayer.prototype.addVolumen = function () {
-    if(this.media.muted == true){
+    if (this.media.muted == true) {
         this.media.muted = false
         this.media.volume += 0.25
-    }else{
-        if(this.media.volume >= 1){
+    } else {
+        if (this.media.volume >= 1) {
             alert('limite del volumen')
-        }else{
-            this.media.volume += 0.25    
+        } else {
+            this.media.volume += 0.25
         }
     }
-    
+
 };
 
 mediaPlayer.prototype.removeVolumen = function () {
