@@ -118,13 +118,101 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"typescript/index.ts":[function(require,module,exports) {
-console.log('hola');
+// TIPOS DE DATOS !!!
+// Boolean
+var muted = true;
+muted = false; // numeros
+
+var age = "6";
+var numerador = 42;
+var denominador = 6;
+var resultado = numerador / denominador; // string
+
+var nombre = "Richard";
+var saludo = "me llamo " + nombre; // arreglos
+
+var people; // arreglo de string
+
+people = ["Isabel", "Nicole", "Raul"]; //people.push("9000");
+
+var peopleAndNumbers = []; // array de numeros y string
+
+peopleAndNumbers.push("9000");
+peopleAndNumbers.push(8000); // Enum
+
+var Color;
+
+(function (Color) {
+  Color["rojo"] = "rojo";
+  Color["verde"] = "verde";
+  Color["azul"] = "azul";
+  Color["amarillo"] = "amarillo";
+})(Color || (Color = {}));
+
+;
+var colorFavorito = Color.amarillo;
+console.log("mi color favorito es " + colorFavorito); // any
+
+var comodin = "Joker";
+comodin = {
+  tyoe: "wilcard"
+}; // object
+
+var someObject = {
+  "type": "wilcard"
+}; // FUNCIONES !!!
 
 function add(a, b) {
   return a + b;
 }
 
-var suma = add(2, 3);
+var suma = add(3, 2);
+
+function createAdder(a) {
+  return function (b) {
+    return b + a;
+  };
+}
+
+var addFour = createAdder(3);
+var fourPluse = addFour(4);
+
+function fullName(firsName, lastName) {
+  if (lastName === void 0) {
+    lastName = "carrizal";
+  }
+
+  return firsName + " " + lastName;
+}
+
+var richard = fullName('carlos');
+console.log(richard); // INTERFACES !!!
+
+var Colores;
+
+(function (Colores) {
+  Colores["rojo"] = "rojo";
+  Colores["verde"] = "verde";
+})(Colores || (Colores = {}));
+
+var rec = {
+  ancho: 4,
+  alto: 1,
+  color: Colores.rojo
+};
+
+function area(r) {
+  return r.alto * r.ancho;
+}
+
+var areaRec = area(rec);
+console.log(areaRec);
+
+rec.toString = function () {
+  return this.color ? "rectnagulo " + this.color : "un rectangulo";
+};
+
+console.log(rec.toString());
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -153,7 +241,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63050" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53442" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
