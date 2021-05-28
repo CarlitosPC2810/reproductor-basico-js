@@ -49,12 +49,4 @@ class mediaPlayer {
     }
 }
 
-
-
-
-
-
-
-
-
 export default mediaPlayer;

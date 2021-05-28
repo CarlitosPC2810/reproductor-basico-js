@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html typescript/index.html"
+    "start": "parcel index.html typescript/index.html singleton/index.html observer/index.html decorator/index.html"
   },
   "author": "",
   "license": "ISC",
